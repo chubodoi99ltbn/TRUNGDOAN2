@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trang Thông Tin Đơn Vị và Đăng ký Yêu cầu</title>
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+
+/* Nền trang */
+#background{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:url('background.jpg') no-repeat center center fixed;
+    background-size:cover;
+    z-index:-1;
+}
+
+body{font-family:Arial,sans-serif;color:#000;}
+
+header{
+    background:rgba(255,255,255,0.85);
+    padding:20px;
+    text-align:center;
+    backdrop-filter:blur(5px);
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.4);
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+header h1{
+    font-size:1.7rem;
+    color:#007BFF;
+}
+
+/* Nút đăng nhập */
+.login-btn{
+    position:fixed;
+    top:0.5cm;
+    left:0.5cm;
+    width:3cm;
+    height:2cm;
+    background:#003366;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:1rem;
+    z-index:1001;
+}
+.login-btn:hover{background:#0055aa;}
+
+section{
+    max-width:900px;
+    margin:110px auto 30px;
+    padding:10px;
+}
+
+.card{
+    background:rgba(0,33,33,0.45);
+    backdrop-filter:blur(12px);
+    padding:25px;
+    margin:20px 0;
+    border-radius:20px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    color:#fff;
+}
+
+.card h2{color:#F5F5DC;}
+p{line-height:1.6}
+
+/* Ảnh */
+.image-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.image-item{width:25%;}
+.image-item img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/* Form */
+.container{
+    max-width:600px;
+    margin:50px auto;
+    background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(173,216,230,0.85));
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+    border:2px solid #1e90ff;
+}
+
+.container h2{
+    text-align:center;
+    color:#003366;
+    margin-bottom:20px;
+}
+
+label{font-weight:bold;margin-top:12px;display:block;color:#003366;}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border-radius:10px;
+    border:2px solid #1e90ff;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:10px;
+    background:#ff4500;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{background:#ff6347;}
+
+#status{text-align:center;margin-top:15px;font-weight:bold;color:#ff4500;}
+
+/* Tra cứu */
+#statusContainer{
+    max-width:500px;
+    margin:40px auto 60px;
+    padding:20px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+    border:2px solid #1e90ff;
+    text-align:center;
+}
+#statusResult{margin-top:10px;font-weight:bold;}
+</style>
+</head>
+
+<body>
+<div id="background"></div>
+
+<header>
+<h1>TRUNG ĐOÀN 2</h1>
+
+<div class="button-container">
+  <button class="login-btn" onclick="window.location.href='login.html'">Đăng nhập</button>
+
+</div>
+</header>
+
+<section>
+  <div class="card" id="gth">
+    <h2>Giới thiệu</h2>
+    <p>Trung đoàn 2 (Đoàn An Lão Anh hùng) được thành lập ngày 08/5/1962 tại căn cứ Nước Chè (Kon Tum), là Trung đoàn bộ binh chủ lực đầu tiên của Quân khu 5. Trải qua hơn 60 năm xây dựng, chiến đấu và trưởng thành, Trung đoàn đã lập nhiều chiến công đặc biệt xuất sắc trong các cuộc kháng chiến chống Mỹ cứu nước, bảo vệ biên giới phía Bắc và trong sự nghiệp xây dựng, bảo vệ Tổ quốc. Với truyền thống “Bám đất, bám dân; càng đánh càng mạnh, càng đánh càng trưởng thành”, Trung đoàn vinh dự được Đảng, Nhà nước phong tặng danh hiệu Anh hùng Lực lượng vũ trang nhân dân, xứng đáng là đơn vị anh hùng, trung thành, tin cậy của Quân đội nhân dân Việt Nam.</p>
+  </div>
+
+
+  <div class="card" id="anh">
+    <h2>Ảnh Đơn Vị</h2>
+    <div class="image-row">
+      <div class="image-item"><img src="anh1.jpg" alt="Ảnh 1"><p>Bảo quản TBKT</p></div>
+      <div class="image-item"><img src="anh2.jpg" alt="Ảnh 2"><p>Thủ trưởng kiểm tra đơn vị</p></div>
+      <div class="image-item"><img src="anh3.jpg" alt="Ảnh 3"><p>Thăm quan nhà truyền thống</p></div>
+      <div class="image-item"><img src="anh4.jpg" alt="Ảnh 4"><p>Hoạt động thao trường</p></div>
+      <div class="image-item"><img src="anh5.jpg" alt="Ảnh 5"><p>Tuyên thệ CSM</p></div>
+      <div class="image-item"><img src="anh6.jpg" alt="Ảnh 6"><p>Tích cực tăng gia sản xuất</p></div>
+    </div>
+  </div>
+
+  <div class="card" id="qd">
+    <h2> Vị trí thăm quân nhân của các đơn vị</h2>
+<ul>
+  <li>Tiểu đoàn 3: Thăm quân nhân tại khu vực khán đài Trung đoàn.</li>
+  <li>Tiểu đoàn 2, Đại đội 20: Thăm quân nhân tại khuôn viên Tiểu đoàn 2.</li>
+  <li>Tiểu đoàn 1: Thăm quân nhân tại khu vực Đại đội 12 (cũ) và đồi thông.</li>
+  <li>Các Đại đội 14, 15, 16, 17, 18, 24, 25: Thăm quân nhân tại khu vực Chiêu đãi sở.</li>
+</ul>
+
+<h2> Quy định thăm quân nhân</h2>
+<ul>
+  <li>Người thân đến thăm phải chấp hành nghiêm các quy định của đơn vị về tham gia giao thông trong phạm vi đơn vị; đặc biệt là việc đội mũ bảo hiểm khi sử dụng xe mô tô, xe gắn máy.</li>
+  <li>Dựng, đỗ xe đúng nơi quy định của đơn vị.</li>
+  <li>Không vứt rác bừa bãi; có trách nhiệm giữ gìn vệ sinh chung và dọn dẹp sạch sẽ trước khi ra về.</li>
+</ul>
+  </div>
+
+  <div class="card">
+    <h2>Video giới thiệu</h2>
+    <video width="100%" height="314" controls>
+      <source src="video.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+  </div>
+</section>
+
+<div class="container">
+<h2>Đăng ký thăm quân nhân</h2>
+<form id="visitForm">
+    <label>Họ và tên</label>
+    <input id="hoten" required>
+
+    <label>CCCD</label>
+    <input id="cccd" required>
+
+    <label>Mối quan hệ</label>
+    <input id="quanhe" required>
+
+    <label>Tên quân nhân</label>
+    <input id="quannhan" required>
+
+    <label>SĐT</label>
+    <input id="sdt" required>
+
+    <label>Tỉnh / Thành</label>
+    <input id="tinhthanh" required>
+
+    <label>Đơn vị</label>
+    <input id="donvi" required>
+
+    <label>Dự kiến thời gian</label>
+    <input id="dukienthoigian" required>
+
+    <label>Phương tiện</label>
+    <input id="phuongtien" required>
+
+    <button type="submit">Gửi đăng ký</button>
+</form>
+<p id="status"></p>
+</div>
+
+<div id="statusContainer">
+  <h2>Tra cứu trạng thái đăng ký</h2>
+
+  <input id="cccdCheck" placeholder="Nhập CCCD">
+  <button onclick="checkStatus()">Tra cứu</button>
+
+ <button id="btnHide" onclick="hideStatus()" style="margin-top:10px;background:#777">
+  Ẩn thông tin
+</button>
+
+<button id="btnShow" onclick="showStatus()" 
+        style="margin-top:10px;display:none">
+  Hiện thông tin
+</button>
+
+
+  <div id="statusResult" style="margin-top:10px;"></div>
+</div>
+
+
+<script>
+const form = document.getElementById("visitForm");
+const statusEl = document.getElementById("status");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = {
+        hoten: document.getElementById("hoten").value,
+        cccd: document.getElementById("cccd").value,
+        quanhe: document.getElementById("quanhe").value,
+        quannhan: document.getElementById("quannhan").value,
+        sdt: document.getElementById("sdt").value,
+        tinhthanhpho: document.getElementById("tinhthanh").value,
+        donvi: document.getElementById("donvi").value,
+        dukienthoigian: document.getElementById("dukienthoigian").value,
+        phuongtien: document.getElementById("phuongtien").value,
+        trangthai: "Chờ duyệt",
+        thoigian: new Date().toLocaleString()
+    };
+
+    statusEl.innerHTML = "⏳ Đang gửi đăng ký...";
+
+    fetch("https://script.google.com/macros/s/AKfycbz9uRf9RRmmdKoA_4YP7XaGuLcdLNzexMZk1jDZBh-5HyWmzmrkrzn1ZpvMrdeg2I8EUg/exec", {
+        method: "POST",
+       
+        body: JSON.stringify(data)
+    })
+    .then(res => res.text())
+    .then(() => {
+        statusEl.style.color = "green";
+        statusEl.innerHTML = "✅ Đăng ký thành công!";
+        form.reset();
+        setTimeout(() => statusEl.innerHTML = "", 4000);
+    })
+    .catch(err => {
+        statusEl.style.color = "red";
+        statusEl.innerHTML = "❌ Gửi thất bại. Vui lòng thử lại!";
+        console.error(err);
+    });
+});
+
+function checkStatus() {
+document.getElementById("statusResult").style.display = "block";
+document.getElementById("btnHide").style.display = "inline-block";
+document.getElementById("btnShow").style.display = "none";
+
+    document.getElementById("statusContainer").style.display = "block";
+    const c = document.getElementById("cccdCheck").value.trim();
+    const result = document.getElementById("statusResult");
+
+
+    if (!c) {
+        result.innerHTML = "⚠️ Vui lòng nhập CCCD";
+        return;
+    }
+
+    fetch(`https://script.google.com/macros/s/AKfycbz9uRf9RRmmdKoA_4YP7XaGuLcdLNzexMZk1jDZBh-5HyWmzmrkrzn1ZpvMrdeg2I8EUg/exec?cccd=${c}`)
+        .then(r => r.json())
+     .then(d => {
+    if (!d || d.length === 0) {
+        result.innerHTML = "❌ Không tìm thấy đăng ký";
+    } else {
+        const r = d[0];
+        result.innerHTML = `
+        <div style="text-align:left; line-height:1.7">
+          <b>Họ tên:</b> ${r.hoten}<br>
+          <b>CCCD:</b> ${r.cccd}<br>
+          <b>Quan hệ:</b> ${r.quanhe}<br>
+          <b>Quân nhân:</b> ${r.quannhan}<br>
+          <b>SĐT:</b> ${r.sdt}<br>
+          <b>Tỉnh/Thành:</b> ${r.tinhthanhpho}<br>
+          <b>Đơn vị:</b> ${r.donvi}<br>
+          <b>Thời gian thăm:</b> ${r.dukienthoigian}<br>
+          <b>Phương tiện:</b> ${r.phuongtien}<br>
+          <b>Trạng thái:</b> <b style="color:green">${r.trangthai}</b><br>
+          <b>Thời gian đăng ký:</b> ${r.thoigian}
+        </div>
+        `;
+    }
+})
+
+        .catch(() => {
+            result.innerHTML = "❌ Lỗi tra cứu";
+        });
+}
+function hideStatus() {
+    document.getElementById("statusResult").style.display = "none";
+    document.getElementById("btnHide").style.display = "none";
+    document.getElementById("btnShow").style.display = "inline-block";
+}
+
+function showStatus() {
+    document.getElementById("statusResult").style.display = "block";
+    document.getElementById("btnHide").style.display = "inline-block";
+    document.getElementById("btnShow").style.display = "none";
+}
+
+
+</script>
+
+
+</body>
+</html>
